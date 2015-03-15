@@ -1,0 +1,75 @@
+
+html, body{
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden; /* altrimenti il menù fuori dal viewport farebbe comparire lo scroll orizzontale */
+}
+
+
+#header{
+    background: blue;
+    height: 10%;
+    width: 100%;
+}
+
+#body{
+    background: orangered;
+    width: 100%;
+    min-height: 80%;
+}
+
+#footer{
+    background: magenta;
+    height: 10%;
+    width: 100%;
+}
+
+#menù_right{
+    box-sizing: border-box;
+    z-index: 10;
+    width: 10%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -9%;
+    padding-left: 1%; /* per far uscire di poco il menù */
+    transition: right 0.4s linear;
+}
+
+#menù_right:hover{
+    right: 0%;
+    transition: right 0.4s linear;
+}
+
+#menù_right ul{
+    background: green;
+    height: 100%;
+}
+
+#menù_right li{
+    background: red;
+    box-sizing: border-box;
+    text-align: center;
+    height: 20%;
+    padding-top: 45%; /* per centrare il testo... ma non c'è un modo migliore per farlo? */
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 780px){
+    #body{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 479px){
+    
+    #footer{
+        display: none;
+    }
+    
+    #header{
+        display: none;
+    }
+}
